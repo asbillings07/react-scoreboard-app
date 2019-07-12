@@ -91,7 +91,6 @@ export class Provider extends Component {
         }}
       >
         {this.props.children}
-        {}
       </ScoreboardContext.Provider>
     );
   }
