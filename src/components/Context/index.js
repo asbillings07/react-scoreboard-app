@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 // Step 1: creating context and assigning to a variable
 // steps up provider and consumer.
@@ -13,40 +13,44 @@ export class Provider extends Component {
   state = {
     players: [
       {
-        name: "Aaron",
+        name: 'Aaron',
         score: 0,
-        id: 1
+        id: 1,
       },
       {
-        name: "Amanda",
+        name: 'Amanda',
         score: 0,
-        id: 2
+        id: 2,
       },
       {
-        name: "Esther",
+        name: 'Esther',
         score: 0,
-        id: 3
+        id: 3,
       },
       {
-        name: "Eden",
+        name: 'Eden',
         score: 0,
-        id: 4
-      }
-    ]
+        id: 4,
+      },
+    ],
   };
   //Player id counter
   prevPlayerId = 4;
 
   handleScoreChange = (index, delta) => {
-    this.setState(prevState => ({
-      score: (prevState.players[index].score += delta)
-    }));
+    if (prevState.players[index].score >= 0) {
+      this.setState(prevState => ({
+        score: (prevState.players[index].score += delta),
+      }));
+    } else {
+      this.setState({ score: 0 });
+    }
   };
 
   handleRemovePlayer = id => {
     this.setState(prevState => {
       return {
-        players: prevState.players.filter(p => p.id !== id)
+        players: prevState.players.filter(p => p.id !== id),
       };
     });
   };
@@ -59,9 +63,9 @@ export class Provider extends Component {
           {
             name,
             score: 0,
-            id: (this.prevPlayerId += 1)
-          }
-        ]
+            id: (this.prevPlayerId += 1),
+          },
+        ],
       };
     });
   };
@@ -86,8 +90,8 @@ export class Provider extends Component {
             changeScore: this.handleScoreChange,
             removePlayer: this.handleRemovePlayer,
             addPlayer: this.handleAddPlayer,
-            highScore: this.getHighScore()
-          }
+            highScore: this.getHighScore(),
+          },
         }}
       >
         {this.props.children}

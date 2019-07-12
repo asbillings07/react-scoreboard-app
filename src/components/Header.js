@@ -4,12 +4,13 @@ import Stopwatch from './Stopwatch';
 
 const Header = () => {
   return (
-    <header>
+    <Header>
       <Stats />
-      <h1>Ready, Set, Score!</h1>
-      <h3>Scoreboard</h3>
+      <h1>
+        <em>Ready, Set, Score!</em>
+      </h1>
       <Stopwatch />
-    </header>
+    </Header>
   );
 };
 

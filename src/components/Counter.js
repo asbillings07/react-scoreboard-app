@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Consumer } from "./Context";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Consumer } from './Context';
 
 // desturcturing props
 const Counter = ({ index }) => {
@@ -29,7 +29,6 @@ const Counter = ({ index }) => {
 }; // sending data up to parent through click event
 
 Counter.propTypes = {
-  index: PropTypes.number
+  index: PropTypes.number,
 }; // type checking
 export default Counter;
-// allows module to be imported into another file.
