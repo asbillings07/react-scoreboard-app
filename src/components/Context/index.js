@@ -38,7 +38,7 @@ export class Provider extends Component {
   prevPlayerId = 4;
 
   handleScoreChange = (index, delta) => {
-    if (prevState.players[index].score >= 0) {
+    if (this.state.players[index].score >= 0) {
       this.setState(prevState => ({
         score: (prevState.players[index].score += delta),
       }));
